@@ -4,17 +4,17 @@
 [ext_resource path="res://Scripts/FloorCode.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 382.5, 17.5 )
+extents = Vector2( 50, 13 )
 
 [node name="floor" type="KinematicBody2D" groups=["floor"]]
-position = Vector2( 383, 583 )
+position = Vector2( 385, 665 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, -1.5 )
+position = Vector2( -3, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

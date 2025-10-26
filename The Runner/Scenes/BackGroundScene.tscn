@@ -8,11 +8,12 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 100, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 self_modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 514, 300.625 )
-scale = Vector2( 2.048, 1.1975 )
+position = Vector2( 659, 406.125 )
+scale = Vector2( 3.024, 1.6195 )
 texture = ExtResource( 1 )
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]

@@ -1,12 +1,13 @@
 local Bullet = {}
 Bullet.__index = Bullet
 
-Bullet.x = 100
-Bullet.y = 100
-Bullet.speed = 40
+Bullet.x = 300
+Bullet.y = 300
+Bullet.speed = 1
+Bullet.width = 20
+Bullet.height = -2
 Bullet.sprite = love.graphics.newImage('Sprites/RedBullet.png')
-local Player = require("player")
-function Bullet:new(x,y)
+function Bullet:new()
    local instance = setmetatable({},Bullet)
    instance.x = x
    instance.y = y
@@ -17,9 +18,15 @@ function Bullet:update(dt)
    BulletMovement()
 end
 function Bullet:draw()
-   Player:love.graphics.drawCenter(self.image, self.x, self.y)
+   love.graphics.drawCenter(self.image, self.x, self.y)
+
+end
+function love.graphics.drawCenter(Image,x,y)
+   local OriginX = Image:getWidth()/2
+   local OriginY = Image:getHeight()/2
+   love.graphics.draw(Image,x,y,0,1,1,OriginX,OriginY)
 end
 function BulletMovement()
-   Bullet.x = bullet.x - bullet.speed
+   Bullet.x = Bullet.x - Bullet.speed
 end
 return Bullet
