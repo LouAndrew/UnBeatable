@@ -24,3 +24,5 @@ func moveMent():
 		$Sprite.play("Bouncing")
 		print(velocity.y)
 	velocity.x = speed
+#func characterRotation(delta):
+#	self.rotation += self.rotation_direction * 1 * self.speed * deltas

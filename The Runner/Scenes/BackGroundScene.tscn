@@ -8,7 +8,11 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 100, 0 )
+position = Vector2( 0, -600 )
+motion_mirroring = Vector2( 100, 100 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 self_modulate = Color( 0, 0, 0, 1 )
@@ -19,6 +23,7 @@ texture = ExtResource( 1 )
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2( 0, -600 )
 motion_mirroring = Vector2( 1125, 750 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
