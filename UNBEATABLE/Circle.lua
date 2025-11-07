@@ -3,7 +3,7 @@ Circle.__index = Circle
 
 Circle.x = 780
 Circle.y = 300
-Circle.speed = 200
+Circle.speed = 250
 Circle.moveLeft = true
 Circle.moveRight = true
 Circle.moveUp = true

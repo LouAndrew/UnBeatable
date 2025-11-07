@@ -31,6 +31,8 @@ end
 
 
 function distanceTo(P1X,P1Y,P2X,P2Y)
-   local Xdiff = P2X - P1X;local Ydiff = P2Y - P1Y;DistApart = Xdiff + Ydiff
+   local Xdiff = P2X - P1X;
+   local Ydiff = P2Y - P1Y;
+   DistApart = Xdiff + Ydiff
    return DistApart
 end

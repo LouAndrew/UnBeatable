@@ -24,7 +24,7 @@ function increaseValue()
 end
 
 function ScoreSystem:draw()
-  love.graphics.setColor(20,255,0,255)
+  --love.graphics.setColor(20,255,0,255)
   love.graphics.print(ScoreSystem.value,ScoreSystem.x,ScoreSystem.y)
 end
 return ScoreSystem
