@@ -4,8 +4,8 @@ ScoreSystem.x = 10
 ScoreSystem.y = 10
 ScoreSystem.value = 0 
 ScoreSystem.incrementValue = 4
-local player = require("player")
-local circle = require("Circle")
+local player = require("Scripts/player")
+local circle = require("Scripts/Circle")
 function ScoreSystem:new()
   local instance = setmetatable({},ScoreSystem)
    instance.x = x

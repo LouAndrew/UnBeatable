@@ -3,13 +3,13 @@ Circle.__index = Circle
 
 Circle.x = 780
 Circle.y = 300
-Circle.speed = 250
+Circle.speed = 0 
 Circle.moveLeft = true
 Circle.moveRight = true
 Circle.moveUp = true
 Circle.moveDown = true
 Circle.Sprite = love.graphics.newImage('Sprites/enemyWhite.png')
-local Player = require('player')
+local player = require('Scripts/player')
 local collisions = require('AllCollisions')
 function Circle:new()
    local instance = setmetatable({},Circle)
@@ -22,8 +22,8 @@ function Circle:draw()
    love.graphics.drawCenter(self.image,self.x,self.y)
 end
 function Circle:update(dt)
+  Circle.speed = player.speed
   CirclemoveMent(dt)
-  --Colliding(Circle,bull)
 end
 function CirclemoveMent(dt)
   if love.keyboard.isDown("e") and Circle.x > 0 and Circle.moveLeft == true then
