@@ -11,7 +11,7 @@ Player.moveLeft = true
 Player.moveRight = true
 Player.moveUp = true
 Player.moveDown = true
-local collisions = require('AllCollisions')
+local collisions = require('Scripts/Physics')
 function Player:new()
   local instance = setmetatable({},Player)
   instance.x = x
@@ -23,12 +23,6 @@ end
 
 function Player:draw()
   love.graphics.drawCenter(self.image,self.x,self.y)
-end
-
-function love.graphics.drawCenter(Image,x,y)
-  local OriginX = Image:getWidth()/2
-  local OriginY = Image:getHeight()/2
-  love.graphics.draw(Image,x,y,0,1,1,OriginX,OriginY)
 end
 
 function Player:update(dt)

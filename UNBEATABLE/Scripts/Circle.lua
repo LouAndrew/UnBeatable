@@ -3,6 +3,8 @@ Circle.__index = Circle
 
 Circle.x = 780
 Circle.y = 300
+Circle.width = 26
+Circle.height = 26
 Circle.speed = 0 
 Circle.moveLeft = true
 Circle.moveRight = true
@@ -10,7 +12,7 @@ Circle.moveUp = true
 Circle.moveDown = true
 Circle.Sprite = love.graphics.newImage('Sprites/enemyWhite.png')
 local player = require('Scripts/player')
-local collisions = require('AllCollisions')
+local collisions = require('Scripts/Physics')
 function Circle:new()
    local instance = setmetatable({},Circle)
    instance.x = x
@@ -37,12 +39,6 @@ function CirclemoveMent(dt)
   elseif love.keyboard.isDown("s") and Circle.y > 0 and  Circle.moveUp == true then
     Circle.y = Circle.y - Circle.speed * dt
   end 
-end
-
-function love.graphics.drawCenter(Image,x,y)
-   local OriginX = Image:getWidth()/2
-   local OriginY = Image:getHeight()/2
-   love.graphics.draw(Image,x,y,0,1,1,OriginX,OriginY)
 end
 
 return Circle

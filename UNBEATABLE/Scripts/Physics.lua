@@ -24,11 +24,15 @@ function isColliding(obj1,MOVE,NOTMOVE)
     obj1.moveDown = MOVE
   end
 end
-local function CheckCollision(ax1,ay1,aw,ah, bx1,by1,bw,bh)
+function CheckCollision(ax1,ay1,aw,ah, bx1,by1,bw,bh)
   local ax2,ay2,bx2,by2 = ax1 + aw, ay1 + ah, bx1 + bw, by1 + bh
   return ax1 < bx2 and ax2 > bx1 and ay1 < by2 and ay2 > by1
 end
-
+function love.graphics.drawCenter(Image,x,y)
+   local OriginX = Image:getWidth()/2
+   local OriginY = Image:getHeight()/2
+   love.graphics.draw(Image,x,y,0,1,1,OriginX,OriginY)
+end
 
 function distanceTo(P1X,P1Y,P2X,P2Y)
    local Xdiff = P2X - P1X;

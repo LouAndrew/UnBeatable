@@ -5,6 +5,7 @@ blocks.altx = -200
 local wave = 1
 local wv = 0
 local showSquare = true
+local physics = require("Scripts/Physics")
 local square = {
   Sprite = love.graphics.newImage('Sprites/Square.png'),
   x = 400,
@@ -206,11 +207,6 @@ function blocks:draw()
   love.graphics.drawCenter(BlockLevels.Blevel4.B1.Sprite,BlockLevels.Blevel4.B1.x,BlockLevels.Blevel4.B1.y)
   love.graphics.drawCenter(BlockLevels.Blevel4.B2.Sprite,BlockLevels.Blevel4.B2.x,BlockLevels.Blevel4.B2.y)
   love.graphics.drawCenter(BlockLevels.Blevel4.B3.Sprite,BlockLevels.Blevel4.B3.x,BlockLevels.Blevel4.B3.y)
-end
-function love.graphics.drawCenter(Image,x,y)
-   local OriginX = Image:getWidth()/2
-   local OriginY = Image:getHeight()/2
-   love.graphics.draw(Image,x,y,0,1,1,OriginX,OriginY)
 end
 
 return blocks
