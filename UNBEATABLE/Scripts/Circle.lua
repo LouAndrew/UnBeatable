@@ -11,8 +11,11 @@ Circle.moveRight = true
 Circle.moveUp = true
 Circle.moveDown = true
 Circle.Sprite = love.graphics.newImage('Sprites/enemyWhite.png')
+
 local player = require('Scripts/player')
 local collisions = require('Scripts/Physics')
+
+
 function Circle:new()
    local instance = setmetatable({},Circle)
    instance.x = x

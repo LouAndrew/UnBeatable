@@ -30,9 +30,9 @@ end
 
 function level:draw()
   love.graphics.drawCenter(background.sprite,background.x,background.y)
-  scoresystem:draw()
   blocks:draw()
   player:draw()
   circle:draw()
+  scoresystem:draw()
 end
 return level
