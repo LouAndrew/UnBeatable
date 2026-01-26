@@ -159,32 +159,12 @@ function blocks:new()
    return instance
 end
 
-function createPulseEffect(initialScale,targetScale,speed)
-  local currentScale = initialScale
-  local pulseDirection = 1
-  
-  return function(dt)
-    currentScale = currentScale + (speed * dt * pulseDirection)
-    if pulseDirection == 1 and currentScale >= targetScale then
-      currentScale = targetScale
-      pulseDirection = -1
-    elseif pulseDirection == -1 and currentScale <= initialScale then
-      currentScale = initialScale
-      pulseDirection = 1
-    end
-    return currentScale
-  end
-end
-
-local pulse = createPulseEffect(1.0,1.1,0.2)
-
 function blocks:update(dt)
 --  local i = 1
 --  repeat
 --    centerCollision(BlockLevels.Blevel1.B1)
 --  until i == 1
   boxPlayerPos(player,BlockLevels.Blevel1.B1,wave)
-  local currentScale = pulse(dt)
   detectCollision()
   arrangeBlocks()
   waves(dt)
@@ -253,7 +233,6 @@ function waves(dt)
   end
 
 function love.graphics.drawcenter(Image,x,y)
-   local scale = pulse(0)
    local OriginX = Image:getWidth()/2
    local OriginY = Image:getHeight()/2
    love.graphics.draw(Image,x,y,0,scale,scale,OriginX,OriginY)

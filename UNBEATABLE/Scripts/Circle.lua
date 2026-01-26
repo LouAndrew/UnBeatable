@@ -1,17 +1,18 @@
-local Circle =  {}
+local Circle =  {
+  x = 780,
+  y = 300,
+  width = 26,
+  height = 26,
+  speed = 0 ,
+  moveLeft = true,
+  moveRight = true,
+  moveUp = true,
+  moveDown = true,
+  Sprite = love.graphics.newImage('Sprites/enemyWhite.png')
+}
 Circle.__index = Circle
 
-Circle.x = 780
-Circle.y = 300
-Circle.width = 26
-Circle.height = 26
-Circle.speed = 0 
-Circle.moveLeft = true
-Circle.moveRight = true
-Circle.moveUp = true
-Circle.moveDown = true
-Circle.Sprite = love.graphics.newImage('Sprites/enemyWhite.png')
-
+love.graphics.print("hello",Circle.x,Circle.y)
 local player = require('Scripts/player')
 local collisions = require('Scripts/Physics')
 
