@@ -1,9 +1,9 @@
 local level = {}
+
 level.__index = level
-local Blocks = require("Scripts/blocks")
-local ScoreSys = require("Scripts/ScoreSys")
-local Player = require("Scripts/player")
-local Circle = require("Scripts/Circle")
+local Blocks = require("Scripts/gameObjects/blocks")
+local Player = require("Scripts/gameObjects/player")
+local Circle = require("Scripts/gameObjects/Circle")
 local inGameUI = require("Scripts/InGameUI")
 local _= require("Scripts/Physics")
 
@@ -16,9 +16,8 @@ local entities = {}
 
 function level:new()
    local instance = setmetatable({},level)
-   scoresystem = ScoreSys.new()
-   player = Player.new()
-   circle = Circle.new()
+   Player = Player.new()
+   Circle = Circle.new()
    inGameUI = inGameUI.new()
    return instance
 end
@@ -28,9 +27,6 @@ local pbull2 = 1
 local xp = 50
 local yp = 0
 
-local playerBNum = 1
-local circleBNum = 1
-
 local blockStatic = false
 local shoot = true
 
@@ -39,14 +35,10 @@ local avatars = {
   Circle
 }
 
-local bullNum1 = 0
-local bullNum2 = 0
-
 function level:update(dt)
-  player:update(dt)
-  circle:update(dt)
+  Player:update(dt)
+  Circle:update(dt)
   inGameUI:update(dt)
-  scoresystem:update(dt)
   
   while (pbull2 <= 2) do
     while (pbull1 <= 3) do
@@ -96,6 +88,7 @@ function level:update(dt)
     for ii,obj in ipairs(entities) do
       if Player.bullets[i] ~= nil then
         if checkDistanceTo(obj,Player.bullets,i) then
+          inGameUI:increaseScore()
           table.remove(entities,ii)
           table.remove(Player.bullets,i)
         end
@@ -106,6 +99,7 @@ function level:update(dt)
     for ii,obj in ipairs(entities) do
        if Circle.bullets[i] ~= nil then
         if checkDistanceTo(obj,Circle.bullets,i) then
+          inGameUI:increaseScore()
           table.remove(entities,ii)
           table.remove(Circle.bullets,i)
         end
@@ -121,12 +115,10 @@ function level:draw()
     love.graphics.draw(entity.Sprite,entity.x,entity.y)
   end
   
-  player:draw()
-  circle:draw()
-  
-  scoresystem:draw()
+  Player:draw()
+  Circle:draw()
   inGameUI:draw()
-  love.graphics.draw(love.graphics.newImage('Sprites/panel1.png'),10,20)
+  --love.graphics.draw(love.graphics.newImage('Sprites/panel1.png'),10,20)
 end
 
 function checkDistanceTo(obj1,obj2,i)

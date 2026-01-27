@@ -1,5 +1,5 @@
 
-return function(x_pos,ypos)
+return function(x_pos,y_pos)
   local bullIcon = {
       x = x_pos,
       y = y_pos,

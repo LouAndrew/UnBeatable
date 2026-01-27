@@ -11,9 +11,9 @@ Circle.__index = Circle
 
 Circle.bullets = {}
 
-local player = require('Scripts/player')
+local player = require('Scripts/gameObjects/player')
 local _ = require('Scripts/Physics')
-local bullet = require('Scripts/bullet')
+local bullet = require('Scripts/gameObjects/bullet')
 local avatar2Shoot = false
 
 function Circle:new()

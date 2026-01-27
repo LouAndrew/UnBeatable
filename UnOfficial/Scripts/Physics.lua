@@ -54,6 +54,7 @@ function love.graphics.drawCenter(Image,x,y)
    local OriginX = Image:getWidth()/2
    local OriginY = Image:getHeight()/2
    love.graphics.draw(Image,x,y,0,1,1,OriginX,OriginY)
+   print("hello")
 end
 
 function distanceTo(obj1,obj2)

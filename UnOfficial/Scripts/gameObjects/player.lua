@@ -1,5 +1,5 @@
 local _ = require('Scripts/Physics')
-local bullet = require('Scripts/bullet')
+local bullet = require('Scripts/gameObjects/bullet')
 local shoot = true
 local Player = {
   x = 20,
@@ -8,12 +8,11 @@ local Player = {
   width = 32,
   height = 32,
   sprite = love.graphics.newImage('Sprites/Player.png'),
-  bullNUm = 0
+  bullNUm = 0,
+  bullets = {}
 }
-
 Player.__index = Player
 
-Player.bullets = {}
 local avatar1Shoot = true
 
 function Player:new(X,Y)
@@ -30,17 +29,6 @@ function Player:new(X,Y)
   return instance
 end
 
-function Player:draw()
-  love.graphics.setColor(1,1,1,1)
-  love.graphics.drawCenter(self.image,self.x,self.y)
-  
-  for _,bull in ipairs(Player.bullets) do
-    love.graphics.drawCenter(bull.Sprite,bull.x,bull.y)
-     --love.graphics.draw(bull.Sprite,bull.x,bull.y)
-  end
-end
-
-
 function Player:update(dt)
   for i,bull in ipairs(Player.bullets) do
     bull.y = bull.y - 2
@@ -53,9 +41,6 @@ function Player:update(dt)
   elseif (love.keyboard.isDown("9")) then
     avatar1Shoot = true
   end
-  
-
-  
   moveMent(dt)
   local x = Player.x
   local y = Player.y - 50
@@ -69,6 +54,15 @@ function Player:update(dt)
   end
 end
 
+
+function Player:draw()
+  love.graphics.setColor(1,1,1,1)
+  love.graphics.drawCenter(self.image,self.x,self.y)
+  
+  for _,bull in ipairs(Player.bullets) do
+    love.graphics.drawCenter(bull.Sprite,bull.x,bull.y)
+  end
+end
 
 function moveMent(dt)
   if love.keyboard.isDown("e") and Player.x < 800 then
