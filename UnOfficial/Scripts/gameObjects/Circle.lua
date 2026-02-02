@@ -4,7 +4,8 @@ local Circle =  {
   width = 32,
   height = 32,
   speed = 0 ,
-  sprite = love.graphics.newImage('Sprites/enemyWhite.png'),
+  rotation = 0,
+  sprite = love.graphics.newImage('Sprites/entity2.png'),
   bullNUm = 0
 }
 Circle.__index = Circle
@@ -22,16 +23,16 @@ function Circle:new()
    local y
    instance.x = x
    instance.y = y
-   instance.image = love.graphics.newImage('Sprites/enemyWhite.png')
+   instance.image = love.graphics.newImage('Sprites/entity2.png')
    return instance
 end
 
 function Circle:draw()
-   love.graphics.drawCenter(self.image,self.x,self.y)
-   for _,bull in ipairs(Circle.bullets) do
-    love.graphics.drawCenter(bull.Sprite,bull.x,bull.y)
-     --love.graphics.draw(bull.Sprite,bull.x,bull.y)
+  for _,bull in ipairs(Circle.bullets) do
+    bull:draw()
   end
+  love.graphics.drawCenter(self.image,self.x,self.y,self.rotation)
+   
 end
 
 local shoot = true
@@ -44,16 +45,16 @@ function Circle:update(dt)
   end
   
   for i,bull in ipairs(Circle.bullets) do
-    bull.y = bull.y + 2
+    bull:update(dt)
     if bull.y > 600  then
       table.remove(Circle.bullets,i)
     end
   end
   local x = Circle.x
-  local y = Circle.y + 50
+  local y = Circle.y 
   if love.keyboard.isDown("o") and (avatar2Shoot) then
     if shoot and (Circle.bullNUm < 3)then
-      table.insert(Circle.bullets,bullet(x,y))
+      table.insert(Circle.bullets,bullet(x,y,player.x,player.y,80))
       shoot = false
     end
   else

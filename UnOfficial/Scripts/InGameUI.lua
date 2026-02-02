@@ -4,6 +4,7 @@ local heart = require("Scripts/UIElements/heart")
 local bullIcon = require("Scripts/UIElements/bulletIcon")
 local entityIcon = require("Scripts/UIElements/entityIcon")
 
+
 local IngameUI = {
   hearts = {},
   bullIcns1 = {}, bullIcns2 = {},
@@ -19,11 +20,11 @@ local entityIcnDetails = {
 
 local bullIcnDetails1 = {
   bullIcnNum = 1,
-  bullIconXpos = 730, bullIconYpos = 10
+  bullIconXpos = 730, bullIconYpos = 20
 }
 local bullIcnDetails2 = {
   bullIcnNum = 1,
-  bullIconXpos = 590, bullIconYpos = 10
+  bullIconXpos = 590, bullIconYpos = 20
 }
 local heartDetails = {
   heartNum = 1,
@@ -96,7 +97,6 @@ end
 
 
 function IngameUI:draw()
-  
   drawElements(IngameUI.entityIcns)
   drawElements(IngameUI.hearts)
   drawElements(IngameUI.bullIcns1)

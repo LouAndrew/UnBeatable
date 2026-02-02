@@ -1,5 +1,6 @@
 local _ = require('Scripts/Physics')
 local bullet = require('Scripts/gameObjects/bullet')
+
 local shoot = true
 local Player = {
   x = 20,
@@ -7,7 +8,8 @@ local Player = {
   speed = 250,
   width = 32,
   height = 32,
-  sprite = love.graphics.newImage('Sprites/Player.png'),
+  rotation = 0,
+  sprite = love.graphics.newImage('Sprites/entity1.png'),
   bullNUm = 0,
   bullets = {}
 }
@@ -25,13 +27,13 @@ function Player:new(X,Y)
       Player.y = instance.yp
     end
   end
-  instance.image = love.graphics.newImage('Sprites/Player.png')
+  instance.image = love.graphics.newImage('Sprites/entity1.png')
   return instance
 end
 
 function Player:update(dt)
   for i,bull in ipairs(Player.bullets) do
-    bull.y = bull.y - 2
+    bull:update(dt)
     if bull.y < 0 then
       table.remove(Player.bullets,i)
     end
@@ -46,21 +48,22 @@ function Player:update(dt)
   local y = Player.y - 50
   if love.keyboard.isDown("o") and (avatar1Shoot) then
     if shoot and (Player.bullNUm < 3) then
-      table.insert(Player.bullets,bullet(x,y))
+      table.insert(Player.bullets,bullet(x,y,0,0,40))
       shoot = false
     end
   else
     shoot = true
   end
+
 end
 
 
 function Player:draw()
   love.graphics.setColor(1,1,1,1)
-  love.graphics.drawCenter(self.image,self.x,self.y)
+  love.graphics.drawCenter(self.image,self.x,self.y,self.rotation)
   
   for _,bull in ipairs(Player.bullets) do
-    love.graphics.drawCenter(bull.Sprite,bull.x,bull.y)
+    bull:draw()
   end
 end
 

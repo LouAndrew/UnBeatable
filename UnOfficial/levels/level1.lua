@@ -6,12 +6,8 @@ local Player = require("Scripts/gameObjects/player")
 local Circle = require("Scripts/gameObjects/Circle")
 local inGameUI = require("Scripts/InGameUI")
 local _= require("Scripts/Physics")
+local background = require("Scripts/UIElements/background")
 
-local background = {
-  x = 400,
-  y = 300,
-  sprite = love.graphics.newImage('Sprites/BackGround1.png')
-}
 local entities = {}
 
 function level:new()
@@ -19,6 +15,7 @@ function level:new()
    Player = Player.new()
    Circle = Circle.new()
    inGameUI = inGameUI.new()
+   local background = background.new()
    return instance
 end
 
@@ -39,7 +36,8 @@ function level:update(dt)
   Player:update(dt)
   Circle:update(dt)
   inGameUI:update(dt)
-  
+  rotateToFace(Player, Circle.x, Circle.y,11, true)
+  rotateToFace(Circle, Player.x, Player.y,7.8, true)
   while (pbull2 <= 2) do
     while (pbull1 <= 3) do
       table.insert(entities,Blocks(xp,yp))
@@ -109,16 +107,17 @@ function level:update(dt)
 end
 
 function level:draw()
-  love.graphics.drawCenter(background.sprite,background.x,background.y)
+  background.draw()
   
   for _,entity in ipairs(entities) do
     love.graphics.draw(entity.Sprite,entity.x,entity.y)
   end
   
+  drawConnection(Player, Circle, 3)
   Player:draw()
   Circle:draw()
+  
   inGameUI:draw()
-  --love.graphics.draw(love.graphics.newImage('Sprites/panel1.png'),10,20)
 end
 
 function checkDistanceTo(obj1,obj2,i)

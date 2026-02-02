@@ -9,7 +9,19 @@ local mouse = {
   x = 0,
   y = 0
 }
-local texts = {"PLAY","CHAPTERS","CREDITS","EXIT","SETTINGS"}
+local images = {
+  love.graphics.newImage("Sprites/playUI.png"),
+  love.graphics.newImage("Sprites/chapterUI.png"),
+  love.graphics.newImage("Sprites/roomUI.png"),
+  love.graphics.newImage("Sprites/exitUI.png"),
+  love.graphics.newImage("Sprites/settingsUI.png")
+}
+local  background = {
+  x = 400,
+  y = 300,
+  Sprite = love.graphics.newImage("Sprites/BackGround1.png")
+}
+
 local buttons = {}
 local btnNum = 1
 local btnXpos = 100
@@ -30,12 +42,15 @@ function mainMenu:update(dt)
     end
   end
   
-  icnDrawer(buttons,buttonImg,btnNum,740,60,0,1)
   icnDrawer(buttons,buttonImg,btnNum,btnXpos,btnYpos,-205,4)
+  icnDrawer(buttons,buttonImg,btnNum,740,60,0,1)
+  
 end
 
 function mainMenu:draw()
+  love.graphics.drawCenter(background.Sprite,background.x,background.y)
   drawElements(buttons)
+  
 end
 
 function icnDrawer(icnTable,icnInit,icnNum,icnXpos,icnYpos,incremVal,icnLength)
@@ -47,12 +62,15 @@ function icnDrawer(icnTable,icnInit,icnNum,icnXpos,icnYpos,incremVal,icnLength)
   return icnNum
 end
 
-local num = 1
+num = 1
 function drawElements(element)
   for i,elem in ipairs(element) do
-    --elem.text = texts[i]
-    love.graphics.print(elem.text,elem.x,elem.y)
-    num = num + 1
+    if(num <= 5) then
+      elem.Sprite = images[num]
+      num = num + 1
+    end
+    love.graphics.drawCenter(elem.Sprite,elem.x,elem.y)
   end
 end
+
 return mainMenu

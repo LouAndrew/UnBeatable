@@ -54,7 +54,6 @@ function love.graphics.drawCenter(Image,x,y)
    local OriginX = Image:getWidth()/2
    local OriginY = Image:getHeight()/2
    love.graphics.draw(Image,x,y,0,1,1,OriginX,OriginY)
-   print("hello")
 end
 
 function distanceTo(obj1,obj2)
@@ -72,8 +71,37 @@ function distanceTo(obj1,obj2)
   return DistApart
 end
 
-function love.graphics.drawCenter(Image,x,y)
+function love.graphics.drawCenter(Image,x,y,rota)
    local OriginX = Image:getWidth()/2
    local OriginY = Image:getHeight()/2
-   love.graphics.draw(Image,x,y,0,1,1,OriginX,OriginY)
+   love.graphics.draw(Image,x,y,rota,1,1,OriginX,OriginY)
 end
+
+function drawConnection(obj1, obj2, width)
+  
+    love.graphics.setLineWidth(width or 1)
+   
+    love.graphics.setColor(0.6157, 0.3059, 1, 1)
+    
+    love.graphics.line(obj1.x, obj1.y, obj2.x, obj2.y)
+    
+    love.graphics.setColor(1, 1, 1, 1)
+end
+
+
+function rotateToFace(sprite, targetX, targetY, offsetAngle, flipY)
+    local dx = targetX - sprite.x
+    local dy = targetY - sprite.y
+    local angle = math.atan2(dy, dx)
+    
+    if flipY then
+        angle = angle + math.pi
+    end
+    
+    if offsetAngle then
+        angle = angle + offsetAngle
+    end
+    
+    sprite.rotation = angle
+end
+
