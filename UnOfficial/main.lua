@@ -1,4 +1,5 @@
-local level = require("levels/level1")
+local level = require("scenes/mainMenu")
+
 function love.load()
   font = love.graphics.newFont("fonts/Tsuchigumo.ttf",60)
   level = level.new()

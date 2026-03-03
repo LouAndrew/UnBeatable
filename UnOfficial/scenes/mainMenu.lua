@@ -9,6 +9,8 @@ local mouse = {
   x = 0,
   y = 0
 }
+local scenes = {"levels/level1"}
+
 local images = {
   love.graphics.newImage("Sprites/playUI.png"),
   love.graphics.newImage("Sprites/chapterUI.png"),
@@ -21,35 +23,43 @@ local  background = {
   y = 300,
   Sprite = love.graphics.newImage("Sprites/BackGround1.png")
 }
-
+local newScene = nil
 local buttons = {}
 local btnNum = 1
 local btnXpos = 100
 local btnYpos = 525
-
+local scn = 1
 function mainMenu:new()
   local instance = setmetatable({},mainMenu)
   return instance
 end
-
 function mainMenu:update(dt)
-  mouse.x, mouse.y = love.mouse.getPosition()
+  if (scn == 1) then
+    mouse.x, mouse.y = love.mouse.getPosition()
   
-  for _,btn in ipairs(buttons) do
-    btn.isHovered = false
-    if (btn.isHovered) then
+    for _,btn in ipairs(buttons) do
+      btn.isHovered = false
+      icnSelector()
+      if (btn.isHovered) then
       
+      end
     end
+    icnDrawer(buttons,buttonImg,btnNum,btnXpos,btnYpos,-205,4)
+    icnDrawer(buttons,buttonImg,btnNum,740,60,0,1)
+  elseif (scn == 2) then 
+    newScene:update(dt)
   end
-  
-  icnDrawer(buttons,buttonImg,btnNum,btnXpos,btnYpos,-205,4)
-  icnDrawer(buttons,buttonImg,btnNum,740,60,0,1)
-  
 end
 
 function mainMenu:draw()
-  love.graphics.drawCenter(background.Sprite,background.x,background.y)
-  drawElements(buttons)
+  if (scn == 1) then
+    love.graphics.drawCenter(background.Sprite,background.x,background.y)
+    drawElements(buttons)
+  elseif (scn == 2) then
+    newScene:draw()
+  elseif (scn == 6) then
+    newScene:draw()
+  end
   
 end
 
@@ -71,6 +81,26 @@ function drawElements(element)
     end
     love.graphics.drawCenter(elem.Sprite,elem.x,elem.y)
   end
+end
+
+function icnSelector()
+  if ( ((distanceTo(buttons[1],mouse)) <= 30 and (distanceTo(buttons[1],mouse)) >= -30) and (love.keyboard.isDown("space")) ) then
+    scn = 2
+    newScene = require("scenes/chapters")
+    newScene.new()
+    
+  elseif ( ((distanceTo(buttons[2],mouse)) <= 30 and (distanceTo(buttons[2],mouse)) >= -30) and (love.keyboard.isDown("space")) ) then
+    print("detected 2")
+  elseif ( ((distanceTo(buttons[3],mouse)) <= 30 and (distanceTo(buttons[3],mouse)) >= -30) and (love.keyboard.isDown("space")) ) then
+    print("detected 3")
+  elseif ( ((distanceTo(buttons[4],mouse)) <= 30 and (distanceTo(buttons[4],mouse)) >= -30) and (love.keyboard.isDown("space")) ) then
+    print("detected 4")
+  elseif ( ((distanceTo(buttons[5],mouse)) <= 30 and (distanceTo(buttons[5],mouse)) >= -30) and (love.keyboard.isDown("space")) ) then
+    scn = 6
+    newScene = require("scenes/settings")
+    newScene.new()
+  end
+  
 end
 
 return mainMenu

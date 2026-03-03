@@ -3,13 +3,14 @@ local Circle = require("Scripts/gameObjects/Circle")
 local heart = require("Scripts/UIElements/heart")
 local bullIcon = require("Scripts/UIElements/bulletIcon")
 local entityIcon = require("Scripts/UIElements/entityIcon")
-
+local pauseIcon = require("Scripts/UIElements/pauseIcon")
 
 local IngameUI = {
   hearts = {},
   bullIcns1 = {}, bullIcns2 = {},
   shootp1 = true, shootp2 = false,
-  entityIcns = {}, score = 0
+  entityIcns = {}, 
+  pauseIcn = {},score = 0
 }
 IngameUI.__index = IngameUI
 
@@ -29,6 +30,11 @@ local bullIcnDetails2 = {
 local heartDetails = {
   heartNum = 1,
   heartXpos = 10, heartYpos = 10
+}
+
+local pauseIconDetails = {
+  pauseIcnNum = 1,
+  pauseXpos = 740, pauseYpos = 70
 }
 
 local bullNum1 = 0
@@ -81,6 +87,8 @@ function IngameUI:update()
   
   bullIcnDetails1.bullIcnNum = icnDrawer(IngameUI.bullIcns1,bullIcon,bullIcnDetails1.bullIcnNum,bullIcnDetails1.bullIconXpos,bullIcnDetails1.bullIconYpos,35,3)
   
+  icnDrawer(IngameUI.pauseIcn,pauseIcon,pauseIconDetails.pauseIcnNum,pauseIconDetails.pauseXpos,pauseIconDetails.pauseYpos,35,1)
+  
   if (bullNum1 > 4) then
     bullIcnDetails1.bullIcnNum = 1
     bullIcnDetails1.bullIconXpos = 730
@@ -101,6 +109,7 @@ function IngameUI:draw()
   drawElements(IngameUI.hearts)
   drawElements(IngameUI.bullIcns1)
   drawElements(IngameUI.bullIcns2)
+  drawElements(IngameUI.pauseIcn)
   love.graphics.setFont(font)
   love.graphics.print(tostring(IngameUI.score), 350, 20)
 end
