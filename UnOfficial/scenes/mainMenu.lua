@@ -9,7 +9,7 @@ local mouse = {
   x = 0,
   y = 0
 }
-local scenes = {"levels/level1"}
+local scenes = {require("levels/level1")}
 
 local images = {
   love.graphics.newImage("Sprites/playUI.png"),
@@ -86,7 +86,7 @@ end
 function icnSelector()
   if ( ((distanceTo(buttons[1],mouse)) <= 30 and (distanceTo(buttons[1],mouse)) >= -30) and (love.keyboard.isDown("space")) ) then
     scn = 2
-    newScene = require("scenes/chapters")
+    newScene = scenes[1]
     newScene.new()
     
   elseif ( ((distanceTo(buttons[2],mouse)) <= 30 and (distanceTo(buttons[2],mouse)) >= -30) and (love.keyboard.isDown("space")) ) then

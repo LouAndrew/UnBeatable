@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dm0jnbci2rim0"]
+
+[ext_resource type="Texture2D" uid="uid://ci4wxamid6vm4" path="res://Assets/background.png" id="1_o6o1e"]
+
+[node name="backGround" type="CanvasLayer" unique_id=1140715703]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1577955202]
+scroll_offset = Vector2(576, 290)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2034469158]
+position = Vector2(-246, 36.499996)
+scale = Vector2(0.5894925, 0.8224182)
+texture = ExtResource("1_o6o1e")
