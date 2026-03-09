@@ -8,8 +8,8 @@ size = Vector2(63, 63)
 
 [node name="playerBod" type="Node" unique_id=2034466430]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=940796398]
-position = Vector2(283, 121)
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=940796398 groups=["player"]]
+position = Vector2(562, 545)
 script = ExtResource("1_33jum")
 metadata/_edit_group_ = true
 

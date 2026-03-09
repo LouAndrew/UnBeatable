@@ -1,1 +1,11 @@
 res://default_env.tres
+res://Scenes/tileScene.tscn
+res://Scripts/enemy.gd
+res://Scripts/tileCode.gd
+res://Scenes/mainScene.tscn
+res://Scenes/enemy.tscn
+res://Scripts/player.gd
+res://Scenes/playscene.tscn
+res://Scenes/backgroundScene.tscn
+res://Scenes/inGameUi.tscn
+res://Scripts/hearts.gd

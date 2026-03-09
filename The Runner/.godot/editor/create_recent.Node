@@ -1,7 +1,11 @@
 Sprite2D
+Node
+Button
+Node2D
+Label
+ColorRect
 CollisionShape2D
 StaticBody2D
-Node
 Parallax2D
 CanvasLayer
 CharacterBody2D

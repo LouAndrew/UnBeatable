@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://3danh6eoy1jf" path="res://Scenes/playerScene.tscn" id="2_i22b1"]
 [ext_resource type="PackedScene" uid="uid://bbdd7w8oxwigm" path="res://Scenes/tileScene.tscn" id="3_1si1o"]
 [ext_resource type="PackedScene" uid="uid://7xfb8wxfnaqi" path="res://Scenes/enemy.tscn" id="3_7qlh5"]
+[ext_resource type="PackedScene" uid="uid://bhe35agew6hhq" path="res://Scenes/inGameUi.tscn" id="5_w3obu"]
 
-[node name="Node" type="Node" unique_id=1888750017]
+[node name="Node" type="Node" unique_id=901281746]
 
 [node name="backGround" parent="." unique_id=1140715703 instance=ExtResource("2_1si1o")]
 layer = -1
@@ -15,3 +16,6 @@ layer = -1
 [node name="enemy" parent="." unique_id=928490 instance=ExtResource("3_7qlh5")]
 
 [node name="Tile" parent="." unique_id=2141564933 instance=ExtResource("3_1si1o")]
+
+[node name="Control" parent="." unique_id=366893035 instance=ExtResource("5_w3obu")]
+offset_bottom = -591.0

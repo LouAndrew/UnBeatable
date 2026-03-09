@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Runner"
-run/main_scene="uid://wt8ihfckd26v"
+run/main_scene="uid://dwavqoth1ihc3"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
 

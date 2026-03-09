@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bhe35agew6hhq"]
+
+[ext_resource type="Texture2D" uid="uid://om8fowxs57cl" path="res://Assets/panel.png" id="1_p2skx"]
+[ext_resource type="Texture2D" uid="uid://pqk8lxrnoijg" path="res://Assets/pause.png" id="2_0sknp"]
+[ext_resource type="Texture2D" uid="uid://cgdwuj2gue0bv" path="res://Assets/heartIcon.png" id="3_lbkh1"]
+[ext_resource type="Script" uid="uid://dqgo34m6p0la8" path="res://Scripts/hearts.gd" id="3_win7w"]
+[ext_resource type="Texture2D" uid="uid://ceb6laja0pdxl" path="res://Assets/panel2.png" id="5_0hp6v"]
+
+[node name="Control" type="Control" unique_id=366893035]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -588.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="Sprite2D" parent="." unique_id=1225065955]
+position = Vector2(329.16, 30.83)
+texture = ExtResource("1_p2skx")
+
+[node name="buttons" type="Node" parent="." unique_id=514607682]
+
+[node name="pauseButton" type="Sprite2D" parent="buttons" unique_id=2071187246]
+position = Vector2(580, 30)
+texture = ExtResource("2_0sknp")
+
+[node name="Button" type="Button" parent="buttons/pauseButton" unique_id=525893412]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_top = -0.020000001
+anchor_right = 1.0200001
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -25.0
+offset_right = -25.000004
+offset_bottom = -25.0
+
+[node name="hearts" type="Node" parent="." unique_id=1457458114]
+script = ExtResource("3_win7w")
+
+[node name="Sprite2D" type="Sprite2D" parent="hearts" unique_id=1152813745]
+position = Vector2(39, 29)
+texture = ExtResource("3_lbkh1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="hearts" unique_id=2003196483]
+position = Vector2(105, 29)
+texture = ExtResource("3_lbkh1")
+
+[node name="Sprite2D3" type="Sprite2D" parent="hearts" unique_id=1053459105]
+position = Vector2(170, 29)
+texture = ExtResource("3_lbkh1")
+
+[node name="Sprite2D4" type="Sprite2D" parent="hearts" unique_id=1639533266]
+position = Vector2(235, 29)
+texture = ExtResource("3_lbkh1")
+
+[node name="panel" type="Sprite2D" parent="hearts" unique_id=351870823]
+z_index = -1
+position = Vector2(137, 30)
+scale = Vector2(1, 0.96)
+texture = ExtResource("5_0hp6v")

@@ -5,10 +5,10 @@
 [node name="backGround" type="CanvasLayer" unique_id=1140715703]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1577955202]
-scroll_offset = Vector2(576, 290)
+scroll_offset = Vector2(333, 329)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2034469158]
-position = Vector2(-246, 36.499996)
-scale = Vector2(0.5894925, 0.8224182)
+position = Vector2(-4, -1.7499847)
+scale = Vector2(0.5894925, 0.8243073)
 texture = ExtResource("1_o6o1e")
