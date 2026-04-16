@@ -11,11 +11,11 @@
 [node name="backGround" parent="." unique_id=1140715703 instance=ExtResource("2_1si1o")]
 layer = -1
 
+[node name="Tile" parent="." unique_id=2141564933 instance=ExtResource("3_1si1o")]
+
 [node name="playerBod" parent="." unique_id=2034466430 instance=ExtResource("2_i22b1")]
 
 [node name="enemy" parent="." unique_id=928490 instance=ExtResource("3_7qlh5")]
-
-[node name="Tile" parent="." unique_id=2141564933 instance=ExtResource("3_1si1o")]
 
 [node name="Control" parent="." unique_id=366893035 instance=ExtResource("5_w3obu")]
 offset_bottom = -591.0

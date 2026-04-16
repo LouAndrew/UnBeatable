@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dbx324mo0dmac"]
+
+[ext_resource type="Texture2D" uid="uid://bpeixu5drocxr" path="res://assets/background.png" id="1_n8j4t"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=883199633]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1479645137]
+scroll_offset = Vector2(576, 350)
+follow_viewport = false
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1764935022]
+texture = ExtResource("1_n8j4t")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=184544290]
+color = Color(0, 0, 0, 1)

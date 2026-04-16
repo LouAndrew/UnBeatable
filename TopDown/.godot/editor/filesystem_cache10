@@ -1,0 +1,12 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1775253288
+default_env.tres::Environment::8229166669762675317::1773617646::0::1::::<><><>0<>0<><>::
+::res://assets/::1773617201
+tile.svg::CompressedTexture2D::834875935839635510::1773617199::1773617201::1::::<><><>0<>0<>f7e6c7777abb035f0e15c67a631fb900<>res://.godot/imported/tile.svg-e3386f3a2391a1859bd4eed1ae2ced1b.ctex::
+::res://scenes/::1773617646
+in_gameUI.tscn::PackedScene::8208222304090206400::1773490795::0::1::::<><><>0<>0<><>::
+level_1.tscn::PackedScene::3790750192133080017::1773491063::0::1::::<><><>0<>0<><>::uid://i78bk0yuaasm::::res://scenes/tile_set1.tscn<>uid://do7ehs05mp513::::res://scenes/in_gameUI.tscn<>uid://dn6y5417sxg2::::res://scenes/player.tscn
+player.tscn::PackedScene::239330149271002579::1773490591::0::1::::<><><>0<>0<><>::
+tile_set1.tscn::PackedScene::629576848760159472::1773617646::0::1::::<><><>0<>0<><>::
+::res://scripts/::1773497923
+tile_map.gd::GDScript::2251361383634195372::1773497923::0::1::::<>TileMapLayer<><>0<>0<><>::

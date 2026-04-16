@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://emosgejx1drf"]
+
+[ext_resource type="Texture2D" uid="uid://bbt6r4l1yf34k" path="res://assets/player.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://djyns8xuhfrdn" path="res://scripts/playerCodegd.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://cy3kqn1d0tfl6" path="res://scenes/light.tscn" id="3_qhqgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(65, 63)
+
+[node name="Node" type="Node" unique_id=470267217]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=974369162 groups=["player"]]
+position = Vector2(576, 346)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_g2els")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=360255965]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1325286488]
+texture = ExtResource("1_3vyb7")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1806286404]
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 700
+editor_draw_limits = true
+
+[node name="PointLight2D" parent="CharacterBody2D" unique_id=1807985666 instance=ExtResource("3_qhqgy")]

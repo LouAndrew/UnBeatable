@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://buajdpyjvesld"]
+
+[ext_resource type="PackedScene" uid="uid://i78bk0yuaasm" path="res://scenes/tile_set1.tscn" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://do7ehs05mp513" path="res://scenes/in_gameUI.tscn" id="2_rus8k"]
+[ext_resource type="PackedScene" uid="uid://dn6y5417sxg2" path="res://scenes/player.tscn" id="3_rus8k"]
+
+[node name="level1" type="Node" unique_id=542519400]
+
+[node name="tile" parent="." unique_id=126393410 instance=ExtResource("1_bswci")]
+
+[node name="in_gameUI" parent="." unique_id=1279775828 instance=ExtResource("2_rus8k")]
+
+[node name="player" parent="." unique_id=109434602 instance=ExtResource("3_rus8k")]

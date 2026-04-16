@@ -3,12 +3,12 @@ extends Node2D
 @onready var button = $Button
 
 func _ready() -> void:
-	#button.connect("pressed",self,"on_button_pressed")
+	button.connect("pressed",on_button_pressed)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if (get_global_mouse_position().distance_to(self.global_position) <= 50):
 		modulate = Color()

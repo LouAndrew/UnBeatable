@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://om8fowxs57cl" path="res://Assets/panel.png" id="1_p2skx"]
 [ext_resource type="Texture2D" uid="uid://pqk8lxrnoijg" path="res://Assets/pause.png" id="2_0sknp"]
+[ext_resource type="Script" uid="uid://bcdi6tqdx4vi1" path="res://Scripts/pausebutton.gd" id="3_2tmmg"]
+[ext_resource type="Texture2D" uid="uid://c6rioq0j0wwv6" path="res://Assets/panel3.png" id="3_5iq2u"]
 [ext_resource type="Texture2D" uid="uid://cgdwuj2gue0bv" path="res://Assets/heartIcon.png" id="3_lbkh1"]
 [ext_resource type="Script" uid="uid://dqgo34m6p0la8" path="res://Scripts/hearts.gd" id="3_win7w"]
 [ext_resource type="Texture2D" uid="uid://ceb6laja0pdxl" path="res://Assets/panel2.png" id="5_0hp6v"]
@@ -22,8 +24,9 @@ texture = ExtResource("1_p2skx")
 [node name="buttons" type="Node" parent="." unique_id=514607682]
 
 [node name="pauseButton" type="Sprite2D" parent="buttons" unique_id=2071187246]
-position = Vector2(580, 30)
+position = Vector2(576.2, 30)
 texture = ExtResource("2_0sknp")
+script = ExtResource("3_2tmmg")
 
 [node name="Button" type="Button" parent="buttons/pauseButton" unique_id=525893412]
 self_modulate = Color(1, 1, 1, 0)
@@ -36,23 +39,28 @@ offset_top = -25.0
 offset_right = -25.000004
 offset_bottom = -25.0
 
+[node name="panel" type="Sprite2D" parent="buttons" unique_id=1571567394]
+z_index = -1
+position = Vector2(576, 30)
+texture = ExtResource("3_5iq2u")
+
 [node name="hearts" type="Node" parent="." unique_id=1457458114]
 script = ExtResource("3_win7w")
 
 [node name="Sprite2D" type="Sprite2D" parent="hearts" unique_id=1152813745]
-position = Vector2(39, 29)
+position = Vector2(39, 30)
 texture = ExtResource("3_lbkh1")
 
 [node name="Sprite2D2" type="Sprite2D" parent="hearts" unique_id=2003196483]
-position = Vector2(105, 29)
+position = Vector2(105, 30)
 texture = ExtResource("3_lbkh1")
 
 [node name="Sprite2D3" type="Sprite2D" parent="hearts" unique_id=1053459105]
-position = Vector2(170, 29)
+position = Vector2(170, 30)
 texture = ExtResource("3_lbkh1")
 
 [node name="Sprite2D4" type="Sprite2D" parent="hearts" unique_id=1639533266]
-position = Vector2(235, 29)
+position = Vector2(235, 30)
 texture = ExtResource("3_lbkh1")
 
 [node name="panel" type="Sprite2D" parent="hearts" unique_id=351870823]

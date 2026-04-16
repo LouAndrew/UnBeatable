@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cy3kqn1d0tfl6"]
+
+[ext_resource type="Texture2D" uid="uid://be01mkjyqbt0e" path="res://assets/light.webp" id="1_24oxn"]
+[ext_resource type="Script" uid="uid://dqkh0dag5vd7y" path="res://scripts/lightCode.gd" id="2_2e2gu"]
+
+[node name="PointLight2D" type="PointLight2D" unique_id=1807985666]
+energy = 1.9
+texture = ExtResource("1_24oxn")
+script = ExtResource("2_2e2gu")

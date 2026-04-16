@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjwegwvk33efs"]
+
+[ext_resource type="PackedScene" uid="uid://dbx324mo0dmac" path="res://scenes/backgroundScene.tscn" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://emosgejx1drf" path="res://scenes/player.tscn" id="2_rus8k"]
+[ext_resource type="PackedScene" uid="uid://cy3kqn1d0tfl6" path="res://scenes/light.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://bqpwxim52hce1" path="res://scenes/tileScene.tscn" id="4_5xbjy"]
+
+[node name="Level1" type="Node" unique_id=1420778075]
+
+[node name="CanvasLayer" parent="." unique_id=883199633 instance=ExtResource("1_bswci")]
+layer = -2
+
+[node name="Node" parent="." unique_id=470267217 instance=ExtResource("2_rus8k")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=548413594]
+visible = false
+
+[node name="PointLight2D" parent="." unique_id=1807985666 instance=ExtResource("3_rus8k")]
+position = Vector2(687, 424)
+
+[node name="tileScene" parent="." unique_id=1657096355 instance=ExtResource("4_5xbjy")]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bqpwxim52hce1"]
+
+[ext_resource type="PackedScene" uid="uid://b3mi6xfefcd1" path="res://scenes/tile.tscn" id="1_k268h"]
+
+[node name="tileScene" type="Node" unique_id=1657096355]
+
+[node name="tiles" type="Node" parent="." unique_id=1472679361]
+
+[node name="tile" parent="tiles" unique_id=1037915359 instance=ExtResource("1_k268h")]
+position = Vector2(32, 668)
+
+[node name="tile2" parent="tiles" unique_id=1127336079 instance=ExtResource("1_k268h")]
+position = Vector2(96, 668)
+
+[node name="tile3" parent="tiles" unique_id=1343739178 instance=ExtResource("1_k268h")]
+position = Vector2(160, 668)
+
+[node name="tile4" parent="tiles" unique_id=201416754 instance=ExtResource("1_k268h")]
+position = Vector2(224, 668)
+
+[node name="tile5" parent="tiles" unique_id=1001713603 instance=ExtResource("1_k268h")]
+position = Vector2(288, 668)
+
+[node name="tile6" parent="tiles" unique_id=439929922 instance=ExtResource("1_k268h")]
+position = Vector2(352, 668)
+
+[node name="tile7" parent="tiles" unique_id=1508159036 instance=ExtResource("1_k268h")]
+position = Vector2(416, 668)
+
+[node name="tile8" parent="tiles" unique_id=2057896535 instance=ExtResource("1_k268h")]
+position = Vector2(480, 668)
+
+[node name="tile9" parent="tiles" unique_id=1040503149 instance=ExtResource("1_k268h")]
+position = Vector2(544, 668)
+
+[node name="tile10" parent="tiles" unique_id=549715996 instance=ExtResource("1_k268h")]
+position = Vector2(608, 668)

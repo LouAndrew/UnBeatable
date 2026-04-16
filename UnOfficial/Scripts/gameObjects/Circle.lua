@@ -32,7 +32,6 @@ function Circle:draw()
     bull:draw()
   end
   love.graphics.drawCenter(self.image,self.x,self.y,self.rotation)
-   
 end
 
 local shoot = true
